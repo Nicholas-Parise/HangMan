@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1570820825 source:c:\users\nop\desktop\c++ code\hangman\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	<cctype>
+
