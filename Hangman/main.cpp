@@ -2171,9 +2171,18 @@ void letters(string answer,char help)
 
     system("CLS");
 
-    if(answer.length()==5)
-    {
 
+    /*
+     if(answer.length()==3)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<endl;
+    }
+    else if(answer.length()==4)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<endl;
+    }
+    else  if(answer.length()==5)
+    {
         cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<endl;
     }
     else if(answer.length()==6)
@@ -2188,7 +2197,7 @@ void letters(string answer,char help)
     {
         cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<" "<<charic7<<" "<<charic8<<endl;
     }
-
+    */
 
 
 }
@@ -2201,9 +2210,7 @@ void RandomWord()
 
 
     srand (time(NULL));
-    randomW = rand()%60;
-
-
+   randomW = rand()%100;
 
     if(randomW == 1)
     {
@@ -2445,7 +2452,166 @@ void RandomWord()
     {
         answer = "luxury";
     }
-
+    else if(randomW == 61)
+    {
+        answer = "matrix";
+    }
+    else if(randomW == 62)
+    {
+        answer = "micro";
+    }
+    else if(randomW == 63)
+    {
+        answer = "wave";
+    }
+    else if(randomW == 64)
+    {
+        answer = "night";
+    }
+    else if(randomW == 65)
+    {
+        answer = "club";
+    }
+    else if(randomW == 66)
+    {
+        answer = "numb";
+    }
+    else if(randomW == 67)
+    {
+        answer = "skull";
+    }
+    else if(randomW == 68)
+    {
+        answer = "oxidize";
+    }
+    else if(randomW == 69)
+    {
+        answer = "pizza";
+    }
+    else if(randomW == 70)
+    {
+        answer = "puppy";
+    }
+    else if(randomW == 71)
+    {
+        answer = "quartz";
+    }
+    else if(randomW == 72)
+    {
+        answer = "quiz";
+    }
+    else if(randomW == 73)
+    {
+        answer = "rhubarb";
+    }
+    else if(randomW == 74)
+    {
+        answer = "rhythm";
+    }
+    else if(randomW == 75)
+    {
+        answer = "scratch";
+    }
+    else if(randomW == 76)
+    {
+        answer = "snazzy";
+    }
+    else if(randomW == 77)
+    {
+        answer = "squawk";
+    }
+    else if(randomW == 78)
+    {
+        answer = "staff";
+    }
+    else if(randomW == 79)
+    {
+        answer = "stretch";
+    }
+    else if(randomW == 80)
+    {
+        answer = "strong";
+    }
+    else if(randomW == 81)
+    {
+        answer = "hold";
+    }
+    else if(randomW == 82)
+    {
+        answer = "subway";
+    }
+    else if(randomW == 83)
+    {
+        answer = "swivel";
+    }
+    else if(randomW == 84)
+    {
+        answer = "thrift";
+    }
+    else if(randomW == 85)
+    {
+        answer = "less";
+    }
+    else if(randomW == 86)
+    {
+        answer = "syndrome";
+    }
+    else if(randomW == 87)
+    {
+        answer = "thumb";
+    }
+    else if(randomW == 88)
+    {
+        answer = "screw";
+    }
+    else if(randomW == 89)
+    {
+        answer = "topaz";
+    }
+    else if(randomW == 90)
+    {
+        answer = "script";
+    }
+    else if(randomW == 91)
+    {
+        answer = "grimace";
+    }
+    else if(randomW == 92)
+    {
+        answer = "Sponge";
+    }
+    else if(randomW == 93)
+    {
+        answer = "Mercury";
+    }
+    else if(randomW == 94)
+    {
+        answer = "Venus";
+    }
+    else if(randomW == 95)
+    {
+        answer = "Earth";
+    }
+    else if(randomW == 96)
+    {
+        answer = "Mars";
+    }
+    else if(randomW == 97)
+    {
+        answer = "Jupiter";
+    }
+    else if(randomW == 98)
+    {
+        answer = "Saturn";
+    }
+    else if(randomW == 99)
+    {
+        answer = "Uranus";
+    }
+    else if(randomW == 100)
+    {
+        answer = "Neptune";
+    }
 
 
 }
@@ -2541,6 +2707,38 @@ void print (string answer)
     cout<<"The following letters are wrong:"<<endl;
     cout<<endl;
     cout<<wrong1<<"  "<<wrong2<<"  "<<wrong3<<"  "<<wrong4<<"  "<<wrong5<<"  "<<wrong6<<endl;
+    cout<<endl;
+
+
+
+    cout<<"The Answer:"<<endl;
+    cout<<endl;
+
+    if(answer.length()==3)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<endl;
+    }
+    else if(answer.length()==4)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<endl;
+    }
+    else  if(answer.length()==5)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<endl;
+    }
+    else if(answer.length()==6)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<endl;
+    }
+    else if(answer.length()==7)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<" "<<charic7<<endl;
+    }
+    else if(answer.length()==8)
+    {
+        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<" "<<charic7<<" "<<charic8<<endl;
+    }
+
 
 
 
@@ -2552,7 +2750,7 @@ void print (string answer)
         for (int i=0; i<answer.length(); ++i)
         {
 
-            cout<<"_ ";
+            //  cout<<"_ ";
         }
 
         cout<<endl;
@@ -2592,7 +2790,8 @@ int main()
 
     RandomWord();
 
-    cout<<"Welcome to Hangman!"<<endl;
+    cout<<"                      Welcome to Hangman!"<<endl;
+    cout<<endl;
     cout<<"The goal is to figure out the secret word, by entering letters below"<<endl;
     cout<<"If a letter is incorrect the letter will not fill a space below"<<endl;
     cout<<"With every wrong answer, another body part is added"<<endl;
@@ -2605,6 +2804,7 @@ int main()
         {
             print(answer);
 
+            cout<<endl;
             cout << "Enter letter: ";
             cin>>help;
 
@@ -2703,7 +2903,7 @@ int main()
             cout<<"Do you want to play again? (Y/N): ";
             cin>>YN;
 
-            if(YN== 'Y'|| YN== 'Y')
+            if(YN== 'Y'|| YN== 'y')
             {
                 system("CLS");
                 charic1 = "_";
@@ -2739,7 +2939,7 @@ int main()
             cout<<"Do you want to play again? (Y/N): ";
             cin>>YN;
 
-            if(YN== 'Y'|| YN== 'Y')
+            if(YN== 'Y'|| YN== 'y')
             {
                 system("CLS");
                 charic1 = "_";
@@ -2768,7 +2968,7 @@ int main()
 
 
     }
-    while(YN== 'Y'|| YN== 'Y');
+    while(YN== 'Y'|| YN== 'y');
 
 
     cout<<"ok"<<endl;
