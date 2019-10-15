@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1570824144 source:c:\users\nop\desktop\c++ code\hangman\main.cpp
+1570826034 source:c:\users\nop\desktop\c++ code\hangman\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>

@@ -9,10 +9,11 @@ using namespace std;
 
 string answer;
 int wrong;
-bool once;
+int show_wrong;
 
 string charic1, charic2, charic3, charic4, charic5, charic6, charic7, charic8;
 string wrong1, wrong2, wrong3, wrong4, wrong5, wrong6;
+
 
 
 void letters(string answer,char help)
@@ -2172,34 +2173,6 @@ void letters(string answer,char help)
     system("CLS");
 
 
-    /*
-     if(answer.length()==3)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<endl;
-    }
-    else if(answer.length()==4)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<endl;
-    }
-    else  if(answer.length()==5)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<endl;
-    }
-    else if(answer.length()==6)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<endl;
-    }
-    else if(answer.length()==7)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<" "<<charic7<<endl;
-    }
-    else if(answer.length()==8)
-    {
-        cout<< charic1<<" "<<charic2<<" "<<charic3<<" "<<charic4<<" "<<charic5<<" "<<charic6<<" "<<charic7<<" "<<charic8<<endl;
-    }
-    */
-
-
 }
 
 
@@ -2207,411 +2180,227 @@ void RandomWord()
 {
 
     int randomW = 0;
-
+    char YNEND;
 
     srand (time(NULL));
-   randomW = rand()%100;
+    randomW = rand()%100+1;
+
+
+    cout<<"Endless mode? (Y/N): ";
+    cin>>YNEND;
+
+
+    if(YNEND == 'Y'|| YNEND == 'y')
+    {
+        wrong = -100;
+    }
+    else
+    {
+
+        cout<<"Good endless just spoils the fun"<<endl;
+    }
+
 
     if(randomW == 1)
-    {
         answer = "Awkward";
-    }
     else if(randomW == 2)
-    {
         answer = "Bagpipe";
-    }
     else if(randomW == 3)
-    {
         answer = "Banjo";
-    }
     else if(randomW == 4)
-    {
         answer = "Bungler";
-    }
     else if(randomW == 5)
-    {
         answer = "Croquet";
-    }
     else if(randomW == 6)
-    {
         answer = "Crypt";
-    }
     else if(randomW == 7)
-    {
         answer = "Dwarves";
-    }
     else if(randomW == 8)
-    {
         answer = "Fervid";
-    }
     else if(randomW == 9)
-    {
         answer = "Fishhook";
-    }
     else if(randomW == 10)
-    {
         answer = "Gazebo";
-    }
     else if(randomW == 11)
-    {
         answer = "Haiku";
-    }
     else if(randomW == 12)
-    {
         answer = "Ivory";
-    }
     else if(randomW == 13)
-    {
         answer = "Jazzy";
-    }
     else if(randomW == 14)
-    {
         answer = "Jiffy";
-    }
     else if(randomW == 15)
-    {
         answer = "Jinx";
-    }
     else if(randomW == 16)
-    {
         answer = "Jukebox";
-    }
     else if(randomW == 17)
-    {
         answer = "Kayak";
-    }
     else if(randomW == 18)
-    {
         answer = "Kiosk";
-    }
     else if(randomW == 19)
-    {
         answer = "Mystify";
-    }
     else if(randomW == 20)
-    {
         answer = "Oxygen";
-    }
     else if(randomW == 21)
-    {
         answer = "Pajama";
-    }
     else if(randomW == 22)
-    {
         answer = "Pixel";
-    }
     else if(randomW == 23)
-    {
         answer = "Rogue";
-    }
     else if(randomW == 24)
-    {
         answer = "Waxy";
-    }
     else if(randomW == 25)
-    {
         answer = "Zippy";
-    }
     else if(randomW == 26)
-    {
         answer = "Zombie";
-    }
     else if(randomW == 27)
-    {
         answer = "Absurd";
-    }
     else if(randomW == 28)
-    {
         answer = "Avenue";
-    }
     else if(randomW == 29)
-    {
         answer = "Band";
-    }
     else if(randomW == 30)
-    {
         answer = "Blizzard";
-    }
     else if(randomW == 31)
-    {
         answer = "Google";
-    }
     else if(randomW == 32)
-    {
         answer = "Car";
-    }
     else if(randomW == 33)
-    {
         answer = "Buffalo";
-    }
     else if(randomW == 34)
-    {
         answer = "Cobweb";
-    }
     else if(randomW == 35)
-    {
         answer = "equip";
-    }
     else if(randomW == 36)
-    {
         answer = "faking";
-    }
     else if(randomW == 37)
-    {
         answer = "cycle";
-    }
     else if(randomW == 38)
-    {
         answer = "duplex";
-    }
     else if(randomW == 39)
-    {
         answer = "fixable";
-    }
     else if(randomW == 40)
-    {
         answer = "flapjack";
-    }
     else if(randomW == 41)
-    {
         answer = "fox";
-    }
     else if(randomW == 42)
-    {
         answer = "funny";
-    }
     else if(randomW == 43)
-    {
         answer = "galaxy";
-    }
     else if(randomW ==44)
-    {
         answer = "gizmo";
-    }
     else if(randomW == 45)
-    {
         answer = "gossip";
-    }
     else if(randomW == 46)
-    {
         answer = "icebox";
-    }
     else if(randomW == 47)
-    {
         answer = "jackpot";
-    }
     else if(randomW == 48)
-    {
         answer = "jelly";
-    }
     else if(randomW == 49)
-    {
         answer = "jigsaw";
-    }
     else if(randomW == 50)
-    {
         answer = "hockey";
-    }
     else if(randomW == 51)
-    {
         answer = "jog";
-    }
     else if(randomW == 52)
-    {
         answer = "joyful";
-    }
     else if(randomW == 53)
-    {
         answer = "juicy";
-    }
     else if(randomW == 54)
-    {
         answer = "jumbo";
-    }
     else if(randomW == 55)
-    {
         answer = "kazoo";
-    }
     else if(randomW == 56)
-    {
         answer = "keyhole";
-    }
     else if(randomW == 57)
-    {
         answer = "klutz";
-    }
     else if(randomW == 58)
-    {
         answer = "length";
-    }
     else if(randomW == 59)
-    {
         answer = "lucky";
-    }
     else if(randomW == 60)
-    {
         answer = "luxury";
-    }
     else if(randomW == 61)
-    {
         answer = "matrix";
-    }
     else if(randomW == 62)
-    {
         answer = "micro";
-    }
     else if(randomW == 63)
-    {
         answer = "wave";
-    }
     else if(randomW == 64)
-    {
         answer = "night";
-    }
     else if(randomW == 65)
-    {
         answer = "club";
-    }
     else if(randomW == 66)
-    {
         answer = "numb";
-    }
     else if(randomW == 67)
-    {
         answer = "skull";
-    }
     else if(randomW == 68)
-    {
         answer = "oxidize";
-    }
     else if(randomW == 69)
-    {
         answer = "pizza";
-    }
     else if(randomW == 70)
-    {
         answer = "puppy";
-    }
     else if(randomW == 71)
-    {
         answer = "quartz";
-    }
     else if(randomW == 72)
-    {
         answer = "quiz";
-    }
     else if(randomW == 73)
-    {
         answer = "rhubarb";
-    }
     else if(randomW == 74)
-    {
         answer = "rhythm";
-    }
     else if(randomW == 75)
-    {
         answer = "scratch";
-    }
     else if(randomW == 76)
-    {
         answer = "snazzy";
-    }
     else if(randomW == 77)
-    {
         answer = "squawk";
-    }
     else if(randomW == 78)
-    {
         answer = "staff";
-    }
     else if(randomW == 79)
-    {
         answer = "stretch";
-    }
     else if(randomW == 80)
-    {
         answer = "strong";
-    }
     else if(randomW == 81)
-    {
         answer = "hold";
-    }
     else if(randomW == 82)
-    {
         answer = "subway";
-    }
     else if(randomW == 83)
-    {
         answer = "swivel";
-    }
     else if(randomW == 84)
-    {
         answer = "thrift";
-    }
     else if(randomW == 85)
-    {
         answer = "less";
-    }
     else if(randomW == 86)
-    {
         answer = "syndrome";
-    }
     else if(randomW == 87)
-    {
         answer = "thumb";
-    }
     else if(randomW == 88)
-    {
         answer = "screw";
-    }
     else if(randomW == 89)
-    {
         answer = "topaz";
-    }
     else if(randomW == 90)
-    {
         answer = "script";
-    }
     else if(randomW == 91)
-    {
         answer = "grimace";
-    }
     else if(randomW == 92)
-    {
         answer = "Sponge";
-    }
     else if(randomW == 93)
-    {
         answer = "Mercury";
-    }
     else if(randomW == 94)
-    {
         answer = "Venus";
-    }
     else if(randomW == 95)
-    {
         answer = "Earth";
-    }
     else if(randomW == 96)
-    {
         answer = "Mars";
-    }
     else if(randomW == 97)
-    {
         answer = "Jupiter";
-    }
     else if(randomW == 98)
-    {
         answer = "Saturn";
-    }
     else if(randomW == 99)
-    {
         answer = "Uranus";
-    }
     else if(randomW == 100)
-    {
         answer = "Neptune";
-    }
 
 
 }
@@ -2704,7 +2493,7 @@ void print (string answer)
 
 
     cout<<endl;
-    cout<<"The following letters are wrong:"<<endl;
+    cout<<"wrong letters :"<<endl;
     cout<<endl;
     cout<<wrong1<<"  "<<wrong2<<"  "<<wrong3<<"  "<<wrong4<<"  "<<wrong5<<"  "<<wrong6<<endl;
     cout<<endl;
@@ -2740,24 +2529,6 @@ void print (string answer)
     }
 
 
-
-
-
-
-    if(once == true)
-    {
-        cout<<endl;
-        for (int i=0; i<answer.length(); ++i)
-        {
-
-            //  cout<<"_ ";
-        }
-
-        cout<<endl;
-        once = false;
-    }
-
-
 }
 
 
@@ -2768,7 +2539,7 @@ int main()
     char help;
     char YN;
     bool won = false;
-    once = true;
+
 
     charic1 = "_";
     charic2 = "_";
@@ -2787,8 +2558,9 @@ int main()
     wrong6 = "?";
 
     wrong= 0;
+    show_wrong = 0;
 
-    RandomWord();
+
 
     cout<<"                      Welcome to Hangman!"<<endl;
     cout<<endl;
@@ -2797,6 +2569,9 @@ int main()
     cout<<"With every wrong answer, another body part is added"<<endl;
     cout<<"If the man is hanged before you figure out the answer YOU LOSE!"<<endl;
     cout<<endl;
+
+    RandomWord();
+
     do
     {
 
@@ -2813,11 +2588,21 @@ int main()
 
             if (wrong ==6)
             {
-
                 break;
-
             }
 
+            if(wrong == 5)
+                show_wrong = 1;
+            if(wrong == 4)
+                show_wrong = 2;
+            if(wrong == 3)
+                show_wrong = 3;
+            if(wrong == 2)
+                show_wrong = 4;
+            if(wrong == 1)
+                show_wrong = 5;
+            if(wrong == 0)
+                show_wrong = 6;
 
 
             if(answer.length()==3)
@@ -2825,22 +2610,26 @@ int main()
 
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
+
                     won = true;
                     break;
                 }
-
-
-
             }
             else if(answer.length()==4)
             {
 
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_" && charic4 != "_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
                     won = true;
                     break;
                 }
@@ -2850,8 +2639,11 @@ int main()
 
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_" && charic4 != "_" && charic5 !="_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
                     won = true;
                     break;
                 }
@@ -2861,8 +2653,11 @@ int main()
 
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_" && charic4 != "_" && charic5 !="_"&& charic6 !="_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
                     won = true;
                     break;
                 }
@@ -2872,8 +2667,11 @@ int main()
             {
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_" && charic4 != "_" && charic5 !="_"&& charic6 !="_"&& charic7 !="_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
                     won = true;
                     break;
                 }
@@ -2884,8 +2682,11 @@ int main()
 
                 if(charic1 !="_" && charic2 !="_" && charic3 != "_" && charic4 != "_" && charic5 !="_"&& charic6 !="_"&& charic7 !="_"&& charic8 !="_")
                 {
+                    cout<<answer<<endl;
                     cout<<endl;
                     cout<<"YOU WIN!"<<endl;
+                    cout<<endl;
+                    cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
                     won = true;
                     break;
                 }
@@ -2922,8 +2723,8 @@ int main()
                 wrong6 = "?";
 
                 wrong= 0;
+                show_wrong = 0;
                 RandomWord();
-                once = true;
                 won = false;
 
 
@@ -2958,8 +2759,9 @@ int main()
                 wrong6 = "?";
 
                 wrong= 0;
+                show_wrong = 0;
                 RandomWord();
-                once = true;
+
                 won = false;
             }
 

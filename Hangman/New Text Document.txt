@@ -1,0 +1,6 @@
+add catogorys like
+
+planets
+places
+things
+people
