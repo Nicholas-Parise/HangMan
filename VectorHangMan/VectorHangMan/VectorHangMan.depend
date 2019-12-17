@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1576554902 source:c:\users\1trea\desktop\c++ code\vectorhangman\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	<cctype>
+	<vector>
+	<fstream>
+
