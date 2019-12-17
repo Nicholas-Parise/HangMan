@@ -8,10 +8,15 @@
 
 using namespace std;
 
-void letters(string &answer,char &input,vector <string> &charic,vector <string> &wrongchar,int &wrong) {
+void letters(string &answer,vector <string> &charic,vector <string> &wrongchar,int &wrong) {
 
-    int j;
-    j = 0;
+    int j =0;
+    char input;
+
+    cout<<endl;
+    cout << "Enter letter: ";
+    cin>>input;
+
 
     for (int i = 0; i<answer.length(); i++) {
 
@@ -504,121 +509,75 @@ void letters(string &answer,char &input,vector <string> &charic,vector <string> 
     }
 }
 
-void RandomWord(string &answer, int &wrong,vector <string> &charic) {
+void RandomWord(string &answer,vector <int> &already_played,vector <string> &charic,vector <string> &text) {
 
     int randomW = 0;
-    char YNEND;
-
-    cout<<"Endless mode? (Y/N): ";
-    cin>>YNEND;
-
-    if(YNEND == 'Y'|| YNEND == 'y') {
-        wrong = -1000;
-    } else {
-
-        cout<<"Good endless just spoils the fun"<<endl;
-    }
-
-    vector <string> text(1);
-    int i = 0;
-
-    ifstream readFile;
-    readFile.open("Assets/Words.txt");
-
-    if(readFile.is_open()) {
-
-        while(!readFile.eof()) {
-
-            readFile >> text[i];
-
-            if(text[i]!="0") {
-                text.resize(text.size()+1);
-                i++;
-            }
-        }
-    }
-
-    readFile.close();
 
     randomW = rand()%text.size();
 
+    for(int i = 0; i<already_played.size(); i++) {
+
+        if(randomW == already_played[i]) {
+
+            randomW = rand()%text.size();
+        }
+    }
+
     answer = text[randomW];
-    cout<<answer<<endl;
+
+    already_played.push_back(randomW);
+
     charic.resize(answer.length());
 }
 
 void print (string &answer,int &wrong,vector <string> &charic,vector <string> &wrongchar) {
 
+    if(wrong >=0) {
+        cout<<"    ________     "<<endl;
+        cout<<"    |      |     "<<endl;
+    }
+
     if(wrong == 0) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
-    }
 
+        cout<<"    |            "<<endl;
+        cout<<"    |            "<<endl;
+        cout<<"    |            "<<endl;
+    }
     if(wrong == 1) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |            "<<endl;
         cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
     }
-
     if(wrong == 2) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |      |     "<<endl;
         cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
     }
-
     if(wrong == 3) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |      |-    "<<endl;
         cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
     }
-
     if(wrong == 4) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |     -|-    "<<endl;
         cout<<"    |            "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
     }
-
     if(wrong == 5) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |     -|-    "<<endl;
         cout<<"    |     /      "<<endl;
-        cout<<"    |            "<<endl;
-        cout<<"  --------       "<<endl;
     }
-
     if(wrong == 6) {
-        cout<<"    ________     "<<endl;
-        cout<<"    |      |     "<<endl;
         cout<<"    |      0     "<<endl;
         cout<<"    |     -|-    "<<endl;
         cout<<"    |     / \\   "<<endl;
+    }
+
+    if(wrong >=0) {
         cout<<"    |            "<<endl;
         cout<<"  --------       "<<endl;
     }
-
 
     cout<<endl;
     cout<<"wrong letters :"<<endl;
@@ -630,6 +589,7 @@ void print (string &answer,int &wrong,vector <string> &charic,vector <string> &w
     }
 
     cout<<endl;
+    cout<<endl;
 
     cout<<"The Answer:"<<endl;
     cout<<endl;
@@ -639,23 +599,70 @@ void print (string &answer,int &wrong,vector <string> &charic,vector <string> &w
     }
 }
 
+void resetGame(int &wrong,vector <string> &charic,vector <string> &wrongchar) {
+
+    char YNEND;
+
+    cout<<"Endless mode? (Y/N): ";
+    cin>>YNEND;
+
+    if(YNEND == 'Y'|| YNEND == 'y') {
+        wrong = -1000;
+    } else {
+
+        wrong = 0;
+        cout<<"Good endless just spoils the fun"<<endl;
+    }
+
+    for(int i = 0; i<charic.size(); i++) {
+        charic[i] = "_";
+    }
+    for(int i = 0; i<wrongchar.size(); i++) {
+        wrongchar[i] = "?";
+    }
+}
+
 int main() {
+// variables n' stuff
 
     vector <string> charic;
     vector <string> wrongchar (6);
+    vector <string> text(1);
+    vector <int> already_played(1);
 
     string answer;
 
-    char input;
     char YN;
 
     int wrong = 0;
     int show_wrong = 0;
+    int index = 0;
 
     bool won = false;
-    bool temp = true;
 
     srand (time(NULL));
+
+//// pushing all the words in Words.txt into a vector
+
+    ifstream readFile;
+    readFile.open("Assets/Words.txt");
+
+    if(readFile.is_open()) {
+
+        while(!readFile.eof()) {
+
+            readFile >> text[index];
+
+            if(text[index]!="0") {
+                text.resize(text.size()+1);
+                index++;
+            }
+        }
+    }
+    readFile.close();
+
+////////
+
 
     cout<<"\t\t\tWelcome to Hangman!"<<endl;
     cout<<endl;
@@ -665,25 +672,16 @@ int main() {
     cout<<"If the man is hanged before you figure out the answer YOU LOSE!"<<endl;
     cout<<endl;
 
-    RandomWord(answer,wrong,charic);
-
-    for(int i = 0; i<charic.size(); i++) {
-        charic[i] = "_";
-    }
-    for(int i = 0; i<wrongchar.size(); i++) {
-        wrongchar[i] = "?";
-    }
+    RandomWord(answer,already_played,charic,text);
+    resetGame(wrong,charic,wrongchar);
 
     do {
 
         do {
             print (answer,wrong,charic,wrongchar);
 
-            cout<<endl;
-            cout << "Enter letter: ";
-            cin>>input;
+            letters(answer,charic,wrongchar,wrong);
 
-            letters(answer,input,charic,wrongchar,wrong);
             system("CLS");
 
             won = true;
@@ -701,26 +699,33 @@ int main() {
 
             if(wrong == 5)
                 show_wrong = 1;
-            if(wrong == 4)
+            else if(wrong == 4)
                 show_wrong = 2;
-            if(wrong == 3)
+            else if(wrong == 3)
                 show_wrong = 3;
-            if(wrong == 2)
+            else if(wrong == 2)
                 show_wrong = 4;
-            if(wrong == 1)
+            else if(wrong == 1)
                 show_wrong = 5;
-            if(wrong == 0)
+            else if(wrong == 0)
                 show_wrong = 6;
 
             print (answer,wrong,charic,wrongchar);
 
             cin.ignore();
+            cin.clear();
 
             cout<<endl;
             cout<<endl;
             cout<<"YOU WIN!"<<endl;
             cout<<endl;
-            cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
+
+            if(wrong >=0) {
+                cout<<"you had "<<show_wrong<<" guesses remaining"<<endl;
+            }
+            if(wrong<0) {
+                cout<<"you had an infinite amount of guesses remaining"<<endl;
+            }
             cout<<endl;
             cout<<"Do you want to play again? (Y/N): ";
             cin>>YN;
@@ -731,6 +736,7 @@ int main() {
             print (answer,wrong,charic,wrongchar);
 
             cin.ignore();
+            cin.clear();
 
             cout<<endl;
             cout<<"you lose! the word was "<<answer<<endl;
@@ -742,22 +748,18 @@ int main() {
         if(YN== 'Y'|| YN== 'y') {
             system("CLS");
 
-            RandomWord(answer,wrong,charic);
+            RandomWord(answer,already_played,charic,text);
+            resetGame(wrong,charic,wrongchar);
 
-            for(int i = 0; i<charic.size(); i++) {
-                charic[i] = "_";
-            }
-            for(int i = 0; i<wrongchar.size(); i++) {
-                wrongchar[i] = "?";
-            }
-
-            wrong= 0;
             show_wrong = 0;
             won = false;
         }
 
 
     } while(YN== 'Y'|| YN== 'y');
+
+    cout<<endl;
+    cout<<"Hope you enjoyed Hang Man!"<<endl;
 
 
     return 0;
