@@ -1,9 +1,6 @@
 # HangMan
 Hang man game made in C++
 <p>
-Only use VectorHangMan2
-
+Only use VectorHangMan2, that is the best version.
 <p>
-that is the best version,
-
-the others are only here for archiving
+The others are only here for archiving
